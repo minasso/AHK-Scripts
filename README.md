@@ -1,3 +1,3 @@
-# hello_world
-New initial repository
+# hello_world yo
+New initial repository \n
 hello hello hello there
