@@ -5,7 +5,8 @@
 
 #IfWinActive ahk_class PX_WINDOW_CLASS
 ^v::^+v
-/*
-^+k::^x
-	*/
+^Right:: Send {End}
+!Right:: Send {End}
+
+
 #IfWinActive 

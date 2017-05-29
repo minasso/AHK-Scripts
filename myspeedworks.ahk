@@ -2,25 +2,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 DetectHiddenWindows, On
 
-/*
-#IfWinNotActive ahk_class PX_WINDOW_CLASS
-
-^Right:: 
-		Send ^!i
-		;WinActivate ahk_exe MySpeed.exe
-		return                              
-		
-+Right:: 
-		
-		WinActivate ahk_exe MySpeed.exe
-		return		 
-!Right::
-		;Send ^!i
-		Sleep 200
-		WinActivate ahk_exe MySpeed.exe
-		return
-                                                         
-*/
 
 ;if having trouble, try closing myspeed then the code base will reset/reload itself allowing any changes to appear
 

@@ -2,6 +2,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+^Left::
+!Left::
+		Send {Home}
 
+;^Right::Send {End}
 
-;RAlt::Ctrl
+^!Left::Send {Home}
+
+^Up::Send {PgUp}
+
+^Down::Send {PgDn}
