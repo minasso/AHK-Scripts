@@ -1,6 +1,7 @@
 #Include C:\Users\andrew\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\boil.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;;;;;;;;   wrap ''  :::::::::::::::::::::::::::
 
 	^'::
 		Send ^c
@@ -20,7 +21,8 @@
 		Send ^v
 		return 
 		
-	
+;;;;;;;;;;;;;;;;;;;;;;   wrap {}  :::::::::::::::::::::::::::
+
 	^+[:: 
 	^+b::
 	^+]::
@@ -32,8 +34,9 @@
 		Send ^v
 		return
 		
+;;;;;;;;;;;;;;;;;;;;;;   wrap []   :::::::::::::::::::::::::::
 		
-#Ifwinnotactive ahk_class PX_WINDOW_CLASS       ;affects build and indent in sublime text
+#Ifwinnotactive ahk_class PX_WINDOW_CLASS       ;sublime text, affects build and indent
 	^[:: 
 	^b::
 	^]::
@@ -45,6 +48,8 @@
 		Send ^v
 		return
 		
+;;;;;;;;;;;;;;;;;;;;;;   wrap /*  :::::::::::::::::::::::::::
+#IfWinActive ahk_class Notepad++
 	^/:: 
 		Send ^c
 		sleep 300
@@ -52,9 +57,9 @@
 		StringReplace, clipboard, clipboard,%A_SPACE%",", All   ; Remove space introduced by WORD
 		Send ^v
 		return
-#Ifwinnotactive 
+#IfWinActive 
 
-
+;;;;;;;;;;;;;;;;;;;;;;   wrap ()  :::::::::::::::::::::::::::
 	^9:: 
 	^0::
 	^+9:: 
@@ -78,7 +83,8 @@
 			
 			
 			
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  sublime text print  ;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;  sublime text wrap print  ;;;;;;;;;;;
+; commented out
 ;^,::
 		Haystack = %clipboard%
 		Needle = print
@@ -99,23 +105,16 @@ else
 		StringReplace, clipboard, clipboard, (,, All  
 		StringReplace, clipboard, clipboard, ),, All
 		StringReplace, clipboard, clipboard,%A_SPACE%",", All
-		Send ^v
-
-
-
-
+		Send ^v		
 		
 		
 		
 		
-		
-		
-		
-		
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;attempt 2?
 			
 			
-^,::
+;^,::
 		Haystack = %clipboard%
 		Needle = print
 		IfNotInString, Haystack, %Needle%
@@ -151,13 +150,4 @@ else
 			
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+	
