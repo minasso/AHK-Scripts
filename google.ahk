@@ -3,7 +3,7 @@
 
 
 
-#g:: 
+^g:: 
 	send ^c
 	sleep 500
 	run  https://www.google.com/#q=%clipboard%
