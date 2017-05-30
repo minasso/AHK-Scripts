@@ -9,7 +9,7 @@
 	Click Right 1767, 1408
 	Sleep 100
 	Click, 1851, 1260
-	Sleep 100
+	Sleep 100 
 	Click
 Return
 #IfWinActive

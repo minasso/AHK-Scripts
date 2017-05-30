@@ -2,14 +2,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-^Space::
-!Space::
-MouseGetPos,,,win
-WinGetClass, class, ahk_id  
-If class in Progman, WorkerW
- WinActivate, ahk_class Chrome_WidgetWin_1
-else
- WinMinimize, A
-Return
+^Left::
+!Left::
+		Send {Home}
 
- 
+;^Right::Send {End}
+
+^!Left::Send {Home}
+
+^Up::Send {PgUp}
+
+^Down::Send {PgDn}
