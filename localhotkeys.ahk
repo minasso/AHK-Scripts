@@ -4,10 +4,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  Drawboard  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#IfWinActive, Drawboard PDF
 
 ;;;;;;;;;;;;;;;;;;; Scroll down ;;;;;;;;;;;;;;;
 /*
-#IfWinActive, Drawboard PDF
 #F20::
 Send {PgDn} 
 Sleep 500 
@@ -15,7 +15,6 @@ return
 */
 ;;;;;;;;;;;;;;;;;;;; Scroll up;;;;;;;;;;;;;;;;
 /*
-#IfWinActive, Drawboard PDF
 #F19::
 Send {PgUp}
 sleep 400
@@ -31,10 +30,8 @@ Sleep 500
 Click
 Return
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;Clear annotations;;;;;;;;;;;;;;;
 
-#IfWinActive, Drawboard PDF
 ^d::
 {
 Click,	57, 59  ; open menu
@@ -51,7 +48,6 @@ sleep 200
 mousemove, 658, 726         ; yes
 }
 Return
-
 
 ;;;;;;;;;;;;;;;;;;;;;; create bookmark ;;;;;;;;;;;;;;;;;;
 ^b::
@@ -83,7 +79,6 @@ return
 
 ;;;;;;;;;;;;;;;; Delete w page manipulation;;;;;;;;;;;;;;;
 /*
-#IfWinActive, Drawboard PDF
 #F18::
 {
 Click,	41, 43, 0
@@ -101,7 +96,6 @@ Return
 */
 ;;;;;;;;;;;;;;;;; print to one note via clicks ;;;;;;;;;;;;;;;;;
 /*
-#IfWinActive, Drawboard PDF
 #F20::
 {
 MouseMove,	41, 43, 0
@@ -131,9 +125,7 @@ Return
 
 */
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;  print to onenote  ;;;;;;;;;;
-#IfWinActive, Drawboard PDF
 #F20::
 {
 Send, ^p                     
@@ -144,8 +136,10 @@ Send {enter}
 }
 Return
 
+#IfWinActive
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   myspeed  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   myspeed  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -175,18 +169,6 @@ return
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; onenote  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#NoEnv
-SetWorkingDir %A_ScriptDir%
-CoordMode, Mouse, Window
-SendMode Input
-#SingleInstance Force
-SetTitleMatchMode 2
-#WinActivateForce
-SetControlDelay 1
-SetWinDelay 0
-SetKeyDelay -1
-SetMouseDelay -1
-SetBatchLines -1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  pen eraser commands ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #IfWinActive ahk_class Framework::CFrame
@@ -213,9 +195,7 @@ SetBatchLines -1
 		send 1     ;;;;;;;;;;      color wheel        ;;;;;;;;;;;;
 		return
 		
-	
 
-	
 
 ;;;;;;;;;;;;;;;  create coordinate axes   ;;;;;;;;;;;;;;;;
 /*
@@ -353,28 +333,25 @@ Return
 ;for navigating powerpoint slides;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#IfWinActive, ahk_class screenClass 
+#IfWinActive, ahk_class screenClass ;fullscreen mode
 
 #F20:: 
 Send {Right} 
 Sleep 500 
 Return 
 
-
-#IfWinActive, ahk_class screenClass 
 #F18:: 
 Send {esc} 
 Sleep 500 
 Return
 
-
-#IfWinActive, ahk_class screenClass 
 #F19:: 
 Send {Left} 
 Sleep 500 
 Return
 
-#IfWinActive, ahk_class PPTFrameClass
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#IfWinActive, ahk_class PPTFrameClass  
 
 #F18:: 
 sleep 50
@@ -385,59 +362,37 @@ send {alt}   ;Activate menu hotkeys
 Sleep 500 
 Return 
 
-#IfWinActive, ahk_class PPTFrameClass
-
 #F20::
 Send {Right}
 Sleep 500
 Return
 
-
-#IfWinActive, ahk_class PPTFrameClass
-
 #F19::
 Send {Left}
 Sleep 500
 Return
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; skype  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
-;#IfWinActive, ahk_class tSkMainForm
-;#IfWinActive, ahk_exe Skype.exe
-
 #IfWinActive, Skype
 	#F20::
-			sleep 100
+			sleep 200
 			send {alt}  ;activate menu 
-			sleep 300 ;
+			sleep 400 ;
 			send as 	;select call, share screens
 	return
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   spotify  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-^!#+s:: Run C:\Users\andrew\AppData\Roaming\Spotify\Spotify.exe
-
-;;works together with pederson spot to run spotify without dl exe 
-
-
-
-
+#IfWinActive
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  epic pen  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#IfWinActive ahk_exe EpicPen.exe
+#IfWinExist Epic Pen
 
 #F20::
 		sleep 500
@@ -465,12 +420,12 @@ Return
 		return
 	*/
 
-#IfWinActive 
+#IfWinExist 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   git bash   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#IfWinActive ahk_class mintty   #git bash fix paste
+#IfWinActive ahk_class mintty   ;git bash fix paste
 ^v::!Insert
 
 #IfWinActive
@@ -483,7 +438,7 @@ Return
 
 #IfWinActive ahk_class OpusApp
 
-#F20::
+#F20::                              ;change to draw
 		sleep 50
 		send {alt} ;
 		sleep 200 ;
@@ -492,7 +447,7 @@ Return
 		Click, 356, 29 ; 
 		return
 		
-#F19::
+#F19::                              ;change to text
 		sleep 50
 		send {alt} ; 
 		sleep 200 ;

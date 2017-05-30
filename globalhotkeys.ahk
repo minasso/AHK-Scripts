@@ -75,8 +75,30 @@ RAlt::Ctrl
 Insert::
 #IfWinNotActive
  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;   spotify  ;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+^!#+s:: Run C:\Users\andrew\AppData\Roaming\Spotify\Spotify.exe
+
+;;works together with pederson spot 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;; global pen usage ;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+#F20::
+        run onenote.exe
+        return
+
+        
+#F19::
+        run onenote.exe
+        return
+        
+;#F18::
+        run onenote.exe
+        return
 
 
