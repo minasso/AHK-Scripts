@@ -6,3 +6,5 @@ SetWorkingDir %A_ScriptDir%     ; Ensures a consistent starting directory.
 #SingleInstance force
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ^!#+s:: Run C:\Users\andrew\AppData\Roaming\Spotify\Spotify.exe
+
+; works together with pederson spot to run spotify without dl exe
