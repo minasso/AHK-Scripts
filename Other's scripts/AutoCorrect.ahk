@@ -4995,6 +4995,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::zeebra::zebra
 ::sionist::Zionist
 ::sionists::Zionists
+;User selected;
 
 ;------------------------------------------------------------------------------
 ; Ambiguous entries.  Where desired, pick the one that's best for you, edit,
@@ -5240,8 +5241,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ther::there, their, the
 ::thikning::thinking, thickening
 ::throught::thought, through, throughout
-::tiem::time, Tim
-::tiome::time, tome
+::tiem::time
+::tiome::time
 ::tourch::torch, touch
 ::transcripting::transcribing, transcription
 ::travelling::traveling   ; commonwealth vs US

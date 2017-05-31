@@ -427,6 +427,7 @@ Return
 
 #IfWinActive ahk_class mintty   ;git bash fix paste
 ^v::!Insert
+^c::^Insert
 
 #IfWinActive
 

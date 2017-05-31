@@ -1,7 +1,4 @@
-import os
 from glob import glob
-
-print(os.getcwd())
 
 g= glob('*works*')
 for item in g:
