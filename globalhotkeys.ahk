@@ -10,6 +10,32 @@
 
 ^+a::  Winset, Alwaysontop, , A
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;  mouse keys ;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+XButton1::Shift
+XButton2::Ctrl
+
+MButton::^!i
+; +MButton::
+; ; ^MButton::  
+
+; +WheelDown::
+; ^WheelDown::
+
+; ^WheelUp::
+; +WheelUp::
+;         Send, {CtrlDown} {AltDown} Tab
+;         Sleep, 2000
+;         Send, {CtrlUp} {AltUp}
+
+
+#InstallKeybdHook
+
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;  google selection ;;;;;;;;;;;;
@@ -43,6 +69,8 @@ return
 
 ^Space::
 !Space::
+; ^WheelDown::
++WheelDown::
 MouseGetPos,,,win
 WinGetClass, class, ahk_id  
 If class in Progman, WorkerW
@@ -51,10 +79,12 @@ else
  WinMinimize, A
 Return
 
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;  reverse scrolling  ;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+/*
 WheelUp::
 Send {WheelDown}
 Return
@@ -62,7 +92,7 @@ Return
 WheelDown::
 Send {WheelUp}
 Return
-
+*/
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;  remap keys  ;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

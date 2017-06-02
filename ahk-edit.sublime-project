@@ -1,0 +1,39 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"file_include_patterns":
+			[
+				"*.ahk"
+			],
+			"folder_exclude_patterns":
+			[
+				"Other's scripts"
+			],
+			"path": "."
+		},
+		{
+			"file_include_patterns":
+			[
+				"*.ahk"
+			],
+			"folder_exclude_patterns":
+			[
+				""
+			],
+			"path": "C:\\Users\\andrew\\Desktop\\Public-AutoHotKey-Scripts-master\\Public-AutoHotKey-Scripts-master\\GUI"
+		},
+		{
+			"path": "C:\\Users\\andrew\\Desktop\\Ahk playground"
+		}
+	]
+}
