@@ -4,6 +4,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   Global Hotkeys   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+^WheelDown:: WinMinimize, A
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; always on top  ;;;;;;;;;;;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -17,21 +19,21 @@
 XButton1::Shift
 XButton2::Ctrl
 
-MButton::^!i
-; +MButton::
+
+; MButton::^!i
+; +
 ; ; ^MButton::  
 
 ; +WheelDown::
 ; ^WheelDown::
+^+WheelDown::Volume_Down
+^+WheelUp::Volume_Up
 
 ; ^WheelUp::
 ; +WheelUp::
 ;         Send, {CtrlDown} {AltDown} Tab
 ;         Sleep, 2000
 ;         Send, {CtrlUp} {AltUp}
-
-
-#InstallKeybdHook
 
 
 
@@ -69,7 +71,6 @@ return
 
 ^Space::
 !Space::
-; ^WheelDown::
 +WheelDown::
 MouseGetPos,,,win
 WinGetClass, class, ahk_id  

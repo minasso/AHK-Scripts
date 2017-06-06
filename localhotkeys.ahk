@@ -162,7 +162,9 @@ Return
 DetectHiddenWindows, On
 
 !Right:: 
-  ;WinActivate, ahk_exe MySpeed.exe
+^MButton::
+^WheelUp::
++WheelUp::
   ControlFocus, ahk_exe MySpeed.exe
 
 
