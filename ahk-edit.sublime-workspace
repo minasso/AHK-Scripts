@@ -416,41 +416,9 @@
 	"buffers":
 	[
 		{
-			"file": "globalhotkeys.ahk",
 			"settings":
 			{
-				"buffer_size": 2770,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "#NoEnv  \t\t\t\t\t\t; \n#Warn  \t\t\t\t\t\t\t; Enable warnings to assist with detecting common errors.\nSendMode Input  \t\t\t\t; use relative coordinates for clicks\nSetWorkingDir %A_ScriptDir%     ; Ensures a consistent starting directory.\n#SingleInstance force\n \n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;          MOOC SEARCH          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\n\nif Pedersen = mooc1\n{\n\tgui_search_title = Mooc Search\n\tsend ^c\n\tsleep 200 \n\tgui_search(\"https://www.coursera.org/courses?languages=en&query=REPLACEME\")\n\tgui_search(\"https://www.edx.org/course?search_query=REPLACEME\")\n\tgui_search(\"https://www.udacity.com/courses/all\")  \n}\n\nelse if Pedersen = mooc2\n{\n    gui_search_title = Mooc Search\n\tgui_search(\"https://learn.saylor.org/course/search.php?search=REPLACEME\")\n\tgui_search(\"https://legacy.saylor.org/#courselist\")\n\tgui_search(\"http://myeducationpath.com/search/REPLACEME.htm?\")\n}\n\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        EBOOKS SEARCH          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\nelse if Pedersen = bk%A_Space%\n{\n    gui_destroy()\n    send ^c\n\tsleep 300\n    run http://bookzz.org/s/?q=%clipboard%&yearFrom=&yearTo=&language=&extension=&t=0\n\treturn\n}\nelse if Pedersen = book%A_Space%\n{\n    gui_search_title = Ebook Search\n\tgui_search(\"http://bookzz.org/s/?q=REPLACEME&yearFrom=&yearTo=&language=&extension=&t=0\")\n\tgui_search(\"http://en.bookfi.net/s/?q=REPLACEME&t=0\")\n}\n\nelse if Pedersen = book1\n{\n    gui_search_title = Ebook Search\n\tgui_search(\"https://www.google.com/search?q=REPLACEME+.pdf\")\n\tgui_search(\"http://bookzz.org/s/?q=REPLACEME&yearFrom=&yearTo=&language=&extension=&t=0\")\n\tgui_search(\"http://en.bookfi.net/s/?q=REPLACEME&t=0\")\n}\n\n\telse if Pedersen = bookz\n{\n    gui_search_title = Ebook Search\n\tgui_search(\"https://www.google.com/search?q=REPLACEME+.pdf\")\n\tgui_search(\"http://bookzz.org/s/?q=REPLACEME&yearFrom=&yearTo=&language=&extension=&t=0\")\n\tgui_search(\"http://en.bookfi.net/s/?q=REPLACEME&t=0\")\n    gui_search_title = Ebook Search\t\n\tgui_search(\"http://libgen.io/search.php?req=REPLACEME\")\n\tgui_search(\"http://golibgen.io/search.php?search_type=magic&search_text=REPLACEME&submit=Dig+for\")\n\tgui_search(\"http://gen.lib.rus.ec/search.php?req=REPLACEME\")\n}\t\n\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        OTHER SEARCH         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\nelse if Pedersen = span ; Translate English to Spanish\n{\n    gui_search_title = English to Spanish\n    gui_search(\"https://translate.google.com/#en/es/REPLACEME\")\n}\n\nelse if Pedersen = wiki \n{\n    gui_search_title = Wiki Search\n    gui_search(\"https://www.wikiwand.com/en/REPLACEME\")\n}\n;;;;;;;;;;; FOOD ;;;;;;;;;;;;;;;;;;;;;\nelse if Pedersen = food\n{\n    gui_search_title = Food Search\n\tgui_search(\"https://www.grubhub.com/search?orderMethod=delivery&locationMode=DELIVERY&facetSet=umamiV2&pageSize=20&hideHateos&queryText=REPLACEME&latitude=40.72567749&longitude=-73.46258545&facet=open_now:true&sortSetId=umamiV2&countOmittingTimes\")\n\tgui_search(\"https://www.seamless.com/search?orderMethod=delivery&locationMode=DELIVERY&facetSet=umamiV2&pageSize=20&hideHateos&queryText=REPLACEME&latitude=40.72567749&longitude=-73.46258545&facet=open_now:true&sortSetId=umamiV2&countOmittingTimes\")\n}\t\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        SEARCH SPACE         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\nelse if Pedersen = g%A_Space% ; Search Google\n{\n    gui_search_title = LMGTFY\n    gui_search(\"https://www.google.com/search?num=50&safe=off&site=&source=hp&q=REPLACEME&btnG=Search&oq=&gs_l=\")\n}\nelse if Pedersen = url\n{\n    gui_search_title = Type in URL\n    gui_search(\"REPLACEME\")   ;use REPLACEME to insert search keyword\n}\nelse if Pedersen = u%A_space%  \n{\n    gui_search_title = Type in URL\n    gui_search(\"REPLACEME\")   ;use REPLACEME to insert search keyword\n}\nelse if Pedersen = ig%A_Space% ; Search Instagram\n{\n    gui_search_title = Instagram\n    gui_search(\"https://www.instagram.com/REPLACEME\")\n}\nelse if Pedersen = ahk%A_Space% ; Search Google for AutoHotkey related stuff\n{\n    gui_search_title = Autohotkey Google Search\n    gui_search(\"https://www.google.com/search?num=50&safe=off&site=&source=hp&q=autohotkey%20REPLACEME&btnG=Search&oq=&gs_l=\")\n}\nelse if Pedersen = dic%A_Space% ; Search dictionary \n{\n    gui_search_title = Dictionary Search\n    gui_search(\"http://www.dictionary.com/browse/REPLACEME\")\n}\nelse if Pedersen = incog ; Search Google as Incognito\n;   A note on how this works:\n;   The function name \"gui_search()\" is poorly chosen.\n;   What you actually specify as the parameter value is a command to run. It does not have to be a URL.\n;   Before the command is run, the word REPLACEME is replaced by your input.\n;   It does not have to be a search url, that was just the application I had in mind when I originally wrote it.\n;   So what this does is that it runs chrome with the arguments \"-incognito\" and the google search URL where REPLACEME in the URL has been \n;\treplaced by your input.\n{\n    gui_search_title = Google Search as Incognito\n    gui_search(\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe -incognito https://www.google.com/search?safe=off&q=REPLACEME\")\n}\nelse if Pedersen = f%A_Space% \n{\n    gui_search_title = Search Facebook\n    gui_search(\"https://www.facebook.com/search/results.php?q=REPLACEME\")\n}\nelse if Pedersen = y%A_Space% ; Search Youtube\n{\n    gui_search_title = Search Youtube\n    gui_search(\"https://www.youtube.com/results?search_query=REPLACEME\")\n}\nelse if Pedersen = m%A_space%\n{\n    gui_search_title = Search\n    gui_search(\"https://www.google.com/maps/search/REPLACEME\")   ;use REPLACEME to insert search keyword\n}\nelse if Pedersen = thes\n{\n    gui_search_title = Search\n    gui_search (\"http://www.thesaurus.com/browse/REPLACEME\")   ;use REPLACEME to insert search keyword\n}\nelse if Pedersen = clist\n{\n    gui_search_title = search craigslist\n    gui_search(\"https://newyork.craigslist.org/search/que/sss?query=REPLACEME&hasPic=1\")\n}\nelse if Pedersen = sr  ; Go to subreddit. This is a quick way to navigate to a specific URL.\n{\n    gui_search_title := \"/r/\"\n    gui_search(\"https://www.reddit.com/r/REPLACEME\")\n}\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      LAUNCH WEBSITES     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\n\nelse if Pedersen = fb ; facebook.com\n{\n    gui_destroy()\n    run www.facebook.com\n}\nelse if Pedersen = red ; reddit.com\n{\n    gui_destroy()\n    run www.reddit.com\n}\nelse if Pedersen = map ; Google Maps \n{\n    gui_destroy()\n    run \"https://www.google.com/maps\"\n}\nelse if Pedersen = gm ; Open google inbox\n{\n    gui_destroy()\n    ;run https://inbox.google.com/u/0/\n    run https://mail.google.com/mail/u/0/#inbox  ; Maybe you prefer the old gmail\n}\nelse if Pedersen = mess ; Opens Facebook unread messages\n{\n    gui_destroy()\n    run https://www.facebook.com/messages?filter=unread&action=recent-messages\n}\nelse if Pedersen = rx\n{\n    gui_destroy()\n    run http://regexr.com/ge\n}\n\nelse if Pedersen = git\n{\n    gui_destroy()\n    run https://github.com/minasso\n}\n\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      RUN PROGRAMS     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\n\nelse if Pedersen = touch\n{\n    gui_destroy()\n    run \"C:\\Users\\andrew\\AppData\\Local\\Microsoft\\Windows\\Application Shortcuts\\47445Rumor.TouchMeGestureStudio_qzbdzynm6aght\"\n}\n\nelse if Pedersen = env\n{\n    gui_destroy()\n    run \"C:\\Windows\\System32\\SystemPropertiesComputerName.exe\"\n}\nelse if Pedersen = spy \n{\n\tgui_destroy()\n\trun AU3_Spy.exe\n}\nelse if Pedersen = bat\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\OneNoteGem\\NoteBatch2016\\NoteBatchProcessor.exe\"\n}\n\nelse if Pedersen = ar\n{\n    gui_destroy()\n    run C:\\Program Files (x86)\\Advanced Renamer\\ARen.exe\n}\nelse if Pedersen = ev \n{\n\tgui_destroy()\n\trun C:\\Program Files\\Everything\\everything.exe\n}\nelse if Pedersen = npp ; notepad++\n{\n    gui_destroy()\n    Run notepad++ \n}\nelse if Pedersen = mac\n{\n    gui_destroy()\n    run \"C:\\Program Files\\MacroCreator\\MacroCreator.exe\"\n}\nelse if Pedersen = kodi\n{\n    gui_destroy()\n    run C:\\Program Files (x86)\\Kodi\\kodi.exe\n}\nelse if Pedersen = 4k\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\4KDownload\\4kvideodownloader\\4kvideodownloader.exe\"\n}\n; else if Pedersen = touch\n; {\n;     gui_destroy()\n;     run C:\\Users\\andrew\\AppData\\Roaming\\AppsolutelyApps\\TouchMe\\TouchMe.exe  \n; }\nelse if Pedersen = sub\n{\n    gui_destroy()\n    run C:/Users/andrew/Desktop/subway_map.pdf  \n}\nelse if Pedersen = ppt\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE\"\n}\nelse if Pedersen = word\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE\"\n}\nelse if Pedersen = vlc\n{\n    gui_destroy()\n    run \"C:\\Program Files\\VideoLAN\\VLC\\vlc.exe\"\n}\nelse if Pedersen = spot\n{\n    gui_destroy()\n    run C:\\Users\\andrew\\AppData\\Roaming\\Spotify\\Spotify.exe\n}\nelse if Pedersen = sky\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\"\n}\nelse if Pedersen = calc\n{\n    gui_destroy()\n    run \"C:\\Users\\andrew\\Desktop\\JUNK FOLDER\\vti-Folder\\vti Folder\\Vti.exe\"\n}\nelse if Pedersen = my\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Enounce\\MySpeed\\MySpeed.exe\"\n}\nelse if Pedersen = epic\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Epic Pen\\EpicPen.exe\"\n}\nelse if Pedersen = ever\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Evernote\\Evernote\\Evernote.exe\"\n}\nelse if Pedersen = ice\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Icecream Screen Recorder\\recorder.exe\"\n}\nelse if Pedersen = aud\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Audacity\\audacity.exe\"\n}\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      INTERACT W AHK SCRIPT    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\nelse if Pedersen = re \n{\n    gui_destroy() ; removes the GUI even when the reload fails\n    Reload\n}\nelse if Pedersen = dir ; Open the directory for this script\n{\n    gui_destroy()\n    Run, %A_ScriptDir%\n}\nelse if Pedersen = host ; Edit host script\n{\n    gui_destroy()\n    run, subl.exe \"%A_ScriptFullPath%\"\n}\nelse if Pedersen = user ; Edit GUI user commands\n{\n    gui_destroy()\n    run, subl.exe \"%A_ScriptDir%\\GUI\\UserCommands.ahk\"\n}\n\nelse if Pedersen = bash\n{\n    gui_destroy()\n    run \"C:\\Program Files\\Git\\git-bash.exe\"\n}\nelse if Pedersen = cmd\n{\n    gui_destroy()\n    run \"C:\\Windows\\system32\\cmd.exe\"\n}\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;work on\nelse if Pedersen = global\n{\n    gui_destroy()\n    run subl.exe \"C:\\Users\\andrew\\Desktop\\Ahk original scripts\\globalhotkeys.ahk\"\n}\nelse if Pedersen = local\n{\n    gui_destroy()\n    run subl.exe \"C:\\Users\\andrew\\Desktop\\Ahk original scripts\\localhotkeys.ahk\"\n} \n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      TYPE RAW TEXT AND SYMBOLS    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\nelse if Pedersen = logo ; \n{\n    gui_destroy()\n    Send ¯\\_(ツ)_/¯\n}\nelse if Pedersen = creep ;\n{\n    gui_destroy()\n    Send ( ͡° ͜ʖ ͡°)﻿\n}\nelse if Pedersen = clip ; Paste clipboard content without formatting\n{\n    gui_destroy()\n    SendRaw, %ClipBoard%\n}\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      OPEN FOLDERS   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\nelse if Pedersen = down ; Downloads\n{\n    gui_destroy()\n    run C:\\Users\\%A_Username%\\Downloads\n}\nelse if Pedersen = st ; startup\n{\n    gui_destroy()\n    run \"C:\\Users\\andrew\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"\n}\nelse if Pedersen = work\n{\n    gui_destroy()\n    run C:\\Users\\andrew\\Desktop\\WORK FOLDER\n}\n\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;     MISCELLANEOUS    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\n\n\nelse if Pedersen = ? ; Tooltip with list of commands\n{\n    GuiControl,, Pedersen, ; Clear the input box\n    Gosub, gui_commandlibrary\n}\nelse if Pedersen = speed\n{\n    gui_destroy()\n    Run \"http://www.speedtest.net/\"\n}\nelse if Pedersen = wl\n{\n    gui_destroy()\n    Run \"https://www.youtube.com/playlist?list=WL\"\n}\nelse if Pedersen = task\n{\n    gui_destroy()\n    run %windir%\\system32\\taskmgr.exe /7\n}\nelse if Pedersen = ie\n{\n    gui_destroy()\n    run \"C:\\Program Files\\Internet Explorer\\iexplore.exe\"\n}\nelse if Pedersen = excel\n{\n    gui_destroy()\n    run \"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.EXE\"\n}\nelse if Pedersen = his\n{\n    gui_destroy()\n    run \"https://www.youtube.com/feed/history\"\n}\n\nelse if Pedersen = head          ;sound icon settings\n{\n    gui_destroy()\n    sleep 500\n\t\tmousemove 2023, 1427 \n\t\tsleep 300\n\t\tclick right\n\t\tsleep 500 ;\n\t\tmousemove 1877, 1296 \n\t\tsleep 300\n\t\tclick\n\t\tsleep 500\n\t\tmousemove 400, 493\n\treturn\n}\nelse if Pedersen = h%A_space%\n{\n    gui_destroy()\n    sleep 200\n\t\tmousemove 2023, 1427 \n\t\tsleep 300\n\t\tclick right\n\t\tsleep 300 ;\n\t\tmousemove 1877, 1296 \n\t\tsleep 300\n\t\tclick\n\t\tsleep 300\n\t\tmousemove 400, 493\n\treturn\n}\nif Pedersen = bk%A_Space%\n{\n    send ^c\n\tsleep 300\n    run http://bookzz.org/s/?q=%clipboard%&yearFrom=&yearTo=&language=&extension=&t=0\n}\nelse if Pedersen = seek\n{\n    gui_destroy()\n    run C:\\Users\\andrew\\Desktop\\Ahk non startup\\Seek.ahk\n}\n\nelse if Pedersen = touch\n{\n    gui_destroy()\n    run \"C:\\Users\\andrew\\AppData\\Roaming\\AppsolutelyApps\\TouchMe\\TouchMe.exe\"\n}\n\n\n\n\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;     ONENOTE    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\n\n\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      ;create coordinate axes   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\nelse if Pedersen = axes\n{\n    gui_destroy()\n\t\tWinActivate ahk_class Framework::CFrame\n\t\tsleep 500\n\t\tsend {alt} \n\t\tsleep 200\n\t\tsend 0\n\t\tsleep 300\n\t\tsend A\n\t\tsleep 300\n\t\tsend {down}{down}\n\t\tsleep 300\n\t\tsend  {right} \n\t\tsleep 300\n\t\tsend {enter}\n\t\treturn\n}\n\nelse if Pedersen = tocp     ;;;;toc for subpages ;;;;\n{\n    gui_destroy()\n\t\tWinActivate ahk_class Framework::CFrame\n\t\tsleep 500\n\t\tsend {alt} \n\t\tsleep 200\n\t\tsend y2\n\t\tsleep 300\n\t\tsend yt\n\t\tsleep 300\n\t\treturn\n}\nelse if Pedersen = tocs     ;;;toc for section;;;;;\n{\n    gui_destroy()\n\t\tWinActivate ahk_class Framework::CFrame\n\t\tsleep 500\n\t\tsend {alt} \n\t\tsleep 200\n\t\tsend y2\n\t\tsleep 300\n\t\tsend ys\n\t\tsleep 300\n\t\treturn\n}\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        set all pics as background        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\nelse if Pedersen = bg    \n{\n    gui_destroy()\n\t\tWinActivate ahk_class Framework::CFrame\n\t\tsleep 500\n\t\tsend {alt} \n\t\tsleep 200\n\t\tsend 0c\n\t\tsleep 200\n\t\tsend {up 3} \n\t\tsend {enter}\n\t\tsleep 200\n\t\treturn\n}\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        set all pics not as background        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n\nelse if Pedersen = nbg\n{\n\tgui_destroy()\n\t\tWinActivate ahk_class Framework::CFrame\n\t\tsleep 500\n\t\tsend {alt} \n\t\tsleep 200\n\t\tsend 0c\n\t\tsleep 200\n\t\tsend {up 2} {enter}\n\t\tsleep 200 \n\t\treturn\n}\n\n\n/* ;from pmc crack\nelse if Pedersen = openlinks\n{\n    gui_destroy()\n    Gosub, openlinks\n}\n\t\nelse if Pedersen = kk\n{\n    gui_destroy()\n    Gosub, all\n}\n\n\topenlinks:\n\tWinActivate, ahk_class Chrome_WidgetWin_1\n\tSleep, 333\n\tLoop\n\t{\n\t\tCoordMode, Pixel, Window\n\t\tImageSearch, FoundX, FoundY, 631, 215, 1975, 1179, C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216031533.png\n\t\tCenterImgSrchCoords(\"C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216031533.png\", FoundX, FoundY)\n\t\tIf ErrorLevel = 0\n\t\t\tClick, %FoundX%, %FoundY% Left, 1\n\t}\n\tUntil ErrorLevel = 0\n\tLoop\n\t{\n\t\tCoordMode, Pixel, Window\n\t\tImageSearch, FoundX, FoundY, 649, 295, 1259, 699, C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216025715.png\n\t\tCenterImgSrchCoords(\"C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216025715.png\", FoundX, FoundY)\n\t\tIf ErrorLevel = 0\n\t\t\tClick, %FoundX%, %FoundY% Left, 1\n\t}\n\tUntil ErrorLevel = 0\n\tReturn\n\n\tprint:\n\tWinActivate, New SAT Math Practice Questions-Applications of Quadratic and Advanced Equations.pdf - Google Drive - Google Chrome ahk_class Chrome_WidgetWin_1\n\tSleep, 333\n\tSend, {LControl Down}{p}\n\tSleep, 235\n\tWinActivate, Untitled - Google Chrome ahk_class Chrome_WidgetWin_1\n\tSend, {LControl Up}\n\tSleep, 5265\n\tWinActivate, ACFrOgCq4IOl63ADoxgTLs7SWaLq3vZOVx7vbdBzgmMAaCn_01zq8_L43zGfiHdAJRbwL7d8-fePWZdQdcWyjRqEHXljGs7v11BeGYgZlveQIYdIFD4IoNoYLenM86M= - Google Chrome ahk_class Chrome_WidgetWin_1\n\tLoop\n\t{\n\t\tCoordMode, Pixel, Window\n\t\tImageSearch, FoundX, FoundY, 54, 295, 527, 875, C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216024019.png\n\t\tIf ErrorLevel = 0\n\t\t\tClick, %FoundX%, %FoundY% Left, 1\n\t}\n\tUntil ErrorLevel = 0\n\tSleep, 641\n\tSendRaw, 2-\n\tSleep, 500\n\tSend, {Enter}\n\tWinWaitActive, ahk_class Framework::CFrame\n\tSleep, 333\n\tSleep, 200\n\tSend, {Enter}\n\tSleep, 300\n\tCoordMode, Pixel, Window\n\tImageSearch, FoundX, FoundY, 29, 62, 664, 718, C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216024609.png\n\tCenterImgSrchCoords(\"C:\\Users\\andrew\\AppData\\Roaming\\MacroCreator\\Screenshots\\Screen_20161216024609.png\", FoundX, FoundY)\n\tIf ErrorLevel = 0\n\t\tClick, %FoundX%, %FoundY% Left, 1\n\tSleep, 1000\n\tSend, ^+t\n\tReturn\n\n\tclose:\n\tWinActivate, ahk_class Chrome_WidgetWin_1\n\tSleep, 333\n\tSend, ^w\n\tSleep, 300\n\tSend, ^w\n\tSleep, 300\n\tSend, ^w\n\tReturn\n\n\tall:\n\tGosub, openlinks\n\tSleep, 3000\n\tGosub, print\n\tSleep, 3000\n\tGosub, close\n\tReturn\n\n\n\tCenterImgSrchCoords(File, ByRef CoordX, ByRef CoordY)\n\t{\n\t\tstatic LoadedPic\n\t\tLastEL := ErrorLevel\n\t\tGui, Pict:Add, Pic, vLoadedPic, %File%\n\t\tGuiControlGet, LoadedPic, Pict:Pos\n\t\tGui, Pict:Destroy\n\t\tCoordX += LoadedPicW // 2\n\t\tCoordY += LoadedPicH // 2\n\t\tErrorLevel := LastEL\n\t}\n\n*/\n\n;-------------------------------------------------------------------------------------------------------------------------------------\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;     CHANGE CASE    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n;-------------------------------------------------------------------------------------------------------------------------------------\n\nelse if Pedersen = upper\n{\n    gui_destroy()\n\t\n OldClipboard:= Clipboard\n Clipboard:= \"\"\n Send, ^c ;copies selected text\n ClipWait\n StringUpper Clipboard, Clipboard\n Send %Clipboard%\n Sleep 1000\n Clipboard:= OldClipboard\nreturn\n}\n\nelse if Pedersen = lower\n{\n    gui_destroy()\n\n OldClipboard:= Clipboard\n Clipboard:= \"\"\n Send, ^c ;copies selected text\n ClipWait\n StringLower Clipboard, Clipboard\n Send %Clipboard%\n Sleep 1000\n Clipboard:= OldClipboard\nreturn\n   \n}\n\nelse if Pedersen = sc\n{\n gui_destroy()\n\n OldClipboard:= Clipboard\n Clipboard:= \"\"\n Send, ^c \n ClipWait\n StringUpper Clipboard, Clipboard, T\n Send %Clipboard%\n Sleep 1000\n Clipboard:= OldClipboard\nreturn\n}\n\n\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n\n\n",
-			"file": "/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/UserCommands.ahk",
-			"file_size": 22589,
-			"file_write_time": 131411757992408736,
-			"settings":
-			{
-				"buffer_size": 21737,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/hotspot.sublime-snippet",
-			"settings":
-			{
-				"buffer_size": 292,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/peds.sublime-snippet",
-			"settings":
-			{
-				"buffer_size": 365,
-				"encoding": "UTF-8",
+				"buffer_size": 0,
 				"line_ending": "Windows"
 			}
 		},
@@ -458,7 +426,16 @@
 			"file": "localhotkeys.ahk",
 			"settings":
 			{
-				"buffer_size": 9507,
+				"buffer_size": 9511,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "globalhotkeys.ahk",
+			"settings":
+			{
+				"buffer_size": 2783,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -578,29 +555,31 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI"
+		"/C/Users/andrew/Desktop/Ahk original scripts"
 	],
 	"file_history":
 	[
+		"/C/Users/andrew/Desktop/Ahk original scripts/pga.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotstrings.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/localhotkeys.ahk",
+		"/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/peds.sublime-snippet",
+		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/UserCommands.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotkeys.ahk",
+		"/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/hotspot.sublime-snippet",
 		"/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/ped.sublime-snippet",
 		"/C/Users/andrew/Desktop/Hotstrings-Script.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/localhotkeys.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotstrings.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotkeys.ahk",
 		"/C/Users/andrew/Desktop/MyScript.ahk",
 		"/C/Users/andrew/Desktop/getkeyinfo.ahk",
 		"/C/Users/andrew/Desktop/newmouse.ahk",
 		"/C/Users/andrew/Desktop/Ahk playground/newmouse.ahk",
 		"/C/Users/andrew/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/reload4.ahk",
 		"/C/Users/andrew/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/boil.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/pga.ahk",
 		"/C/Users/andrew/Desktop/Ahk playground/Gui-Script2.ahk",
 		"/C/Users/andrew/Desktop/Ahk playground/Gui/Gui-Script (1).ahk",
 		"/C/Users/andrew/Desktop/Ahk playground/Gui/Gui-Script.ahk",
 		"/C/Users/andrew/Desktop/Ahk playground/Gui-Script.ahk",
 		"/C/Users/andrew/Desktop/Ahk playground/OnClipboardChange-Script.ahk",
 		"/C/Users/andrew/Desktop/Ahk original scripts/ahk-edit.sublime-project",
-		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/UserCommands.ahk",
 		"/C/Users/andrew/Desktop/Ahk",
 		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/Host.ahk",
 		"/C/Users/andrew/Desktop/localhotkeys.ahk",
@@ -707,9 +686,7 @@
 		"/C/Users/andrew/Desktop/Myers-briggs project/myers_briggs.py",
 		"/C/Users/andrew/Desktop/dataCamp/top_100.py",
 		"/C/Users/andrew/Desktop/dataCamp/ivyleagues.py",
-		"/C/Users/andrew/Desktop/Myers-briggs project/briggs1.txt",
-		"/C/Users/andrew/Desktop/dataCamp/python2try.py",
-		"/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/python2.7.sublime-build"
+		"/C/Users/andrew/Desktop/Myers-briggs project/briggs1.txt"
 	],
 	"find":
 	{
@@ -727,6 +704,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"^WheelDown",
+			"ped",
+			"peds",
 			"search",
 			"mysp",
 			"mbutton",
@@ -844,312 +824,30 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "globalhotkeys.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2770,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1584,
-								1585
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"syntax": "Packages/AutoHotkey/AutoHotkey.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2378.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/UserCommands.ahk",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21737,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8847,
-								8847
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"syntax": "Packages/AutoHotkey/AutoHotkey.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/hotspot.sublime-snippet",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 292,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								292,
-								292
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"default_extension": "sublime-snippet",
-							"syntax": "Packages/XML/XML.sublime-syntax"
+							"default_dir": "C:\\Users\\andrew\\Desktop\\Ahk original scripts",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1159,20 +857,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/peds.sublime-snippet",
+					"buffer": 1,
+					"file": "localhotkeys.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 365,
+						"buffer_size": 9511,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								2869,
+								2869
 							]
 						],
 						"settings":
@@ -1195,6 +893,11 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -1205,26 +908,36 @@
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1234,48 +947,33 @@
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_square_content"
 							],
-							"default_extension": "sublime-snippet",
-							"syntax": "Packages/XML/XML.sublime-syntax"
+							"syntax": "Packages/AutoHotkey/AutoHotkey.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 6130.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "localhotkeys.ahk",
+					"buffer": 2,
+					"file": "globalhotkeys.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9507,
+						"buffer_size": 2783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2807,
-								2807
+								836,
+								836
 							]
 						],
 						"settings":
@@ -1298,6 +996,11 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -1308,26 +1011,36 @@
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1337,31 +1050,17 @@
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_square_content"
 							],
 							"syntax": "Packages/AutoHotkey/AutoHotkey.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 6376.0,
+						"translation.x": -0.0,
+						"translation.y": 595.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

@@ -1,10 +1,11 @@
 #Include C:\Users\andrew\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\boil.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
+^Right:: End
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   Global Hotkeys   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-^WheelDown:: WinMinimize, A
+; ^WheelDown:: WinMinimize, A
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; always on top  ;;;;;;;;;;;; 
@@ -24,17 +25,12 @@ XButton2::Ctrl
 ; +
 ; ; ^MButton::  
 
-; +WheelDown::
-; ^WheelDown::
-^+WheelDown::Volume_Down
-^+WheelUp::Volume_Up
 
-; ^WheelUp::
-; +WheelUp::
-;         Send, {CtrlDown} {AltDown} Tab
-;         Sleep, 2000
-;         Send, {CtrlUp} {AltUp}
+^WheelDown::Volume_Down
+^WheelUp::Volume_Up
 
+^+WheelUp:: Send {PgUp}
+^+WheelDown:: Send {PgDn}
 
 
 

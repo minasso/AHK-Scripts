@@ -161,14 +161,14 @@ Return
 
 DetectHiddenWindows, On
 
-!Right:: 
+; !Right:: 
 ^MButton::
 ^WheelUp::
 +WheelUp::
   ControlFocus, ahk_exe MySpeed.exe
 
 
-^Right:: 
+; ^Right:: 
 if WinActive("ahk_exe MySpeed.exe")
   {
   WinClose
