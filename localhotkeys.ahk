@@ -1,21 +1,16 @@
 #Include C:\Users\andrew\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\boil.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; VLC ;;;;;;;;;;;;;;;;;;
+#IfWinActive, ahk_exe vlc.exe
 
+WheelUp::,
+WheelDown::.
+
+; #IfWinActive, ahk_exe sublime_text.exe
+; ^Enter::
+; +Enter::
+; send ^b
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-#IfWinActive, ahk_class ConsoleWindowClass
-
-:*:ls::dir
-
-#IfWinActive
-
-
-
-
-
-
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  Drawboard  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -160,15 +155,14 @@ Return
 
 
 DetectHiddenWindows, On
+ 
+^MButton::Volume_Mute
 
-; !Right:: 
-^MButton::
-^WheelUp::
 +WheelUp::
   ControlFocus, ahk_exe MySpeed.exe
 
 
-; ^Right:: 
+^Right:: 
 if WinActive("ahk_exe MySpeed.exe")
   {
   WinClose
@@ -307,16 +301,16 @@ send {enter}
 Return
 ;;;;;;;;;;;;;;;;;     set images as background      ;;;;;;;;;;;;;;;;;
 
-^+.::
-sleep 500
-Send {alt} 
-sleep 500
-send 0c 
-sleep 300
-send {down}{down}{down}{down}{down} 
-sleep 300
-send {enter}
-return
+; ^+,::
+; sleep 500
+; Send {alt} 
+; sleep 500
+; send 0c 
+; sleep 300
+; send {down}{down}{down}{down}{down} 
+; sleep 300
+; send {enter}
+; return
 
 
 

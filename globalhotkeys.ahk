@@ -1,11 +1,6 @@
 #Include C:\Users\andrew\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\boil.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-^Right:: End
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   Global Hotkeys   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-; ^WheelDown:: WinMinimize, A
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; always on top  ;;;;;;;;;;;; 
@@ -20,20 +15,18 @@
 XButton1::Shift
 XButton2::Ctrl
 
-
-; MButton::^!i
-; +
-; ; ^MButton::  
-
-
 ^WheelDown::Volume_Down
 ^WheelUp::Volume_Up
 
 ^+WheelUp:: Send {PgUp}
 ^+WheelDown:: Send {PgDn}
 
-
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;  google selection ;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; +Space:: 
+;     ControlFocus, ahk_exe MySpeed.exe
+; return
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;  google selection ;;;;;;;;;;;;
@@ -49,17 +42,8 @@ return
 ;;;;;;;;;;;;;;;;; fix nav keys ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-^Left::
-!Left::
-        Send {Home}
-
-;^Right::Send {End}
-
-^!Left::Send {Home}
-
-^Up::Send {PgUp}
-
-^Down::Send {PgDn}
+!Left::Send {Home}
+!Right::Send {End}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;  minimize window  ;;;;;;;;;;
@@ -76,11 +60,10 @@ else
  WinMinimize, A
 Return
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;  reverse scrolling  ;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 /*
 WheelUp::
 Send {WheelDown}
@@ -90,26 +73,13 @@ WheelDown::
 Send {WheelUp}
 Return
 */
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;  remap keys  ;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-AppsKey::RAlt 
-
-RAlt::Ctrl
-
-#IfWinNotActive ahk_exe mintty.exe
-Insert::
-#IfWinNotActive
- 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;   spotify  ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ^!#+s:: Run C:\Users\andrew\AppData\Roaming\Spotify\Spotify.exe
-
-;;works together with pederson spot 
-
+;;      works together with pederson spot 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;; global pen usage ;;;;;;;;;;;;;;;;;;;
@@ -118,14 +88,9 @@ Insert::
 #F20::
         run onenote.exe
         return
-
-        
 #F19::
         run onenote.exe
         return
-        
 ;#F18::
         run onenote.exe
         return
-
-
