@@ -1,4 +1,4 @@
-#Include C:\Users\andrew\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\boil.ahk
+#Include boil.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; VLC ;;;;;;;;;;;;;;;;;;
 #IfWinActive, ahk_exe vlc.exe
@@ -162,7 +162,7 @@ DetectHiddenWindows, On
   ControlFocus, ahk_exe MySpeed.exe
 
 
-^Right:: 
++Right:: 
 if WinActive("ahk_exe MySpeed.exe")
   {
   WinClose
