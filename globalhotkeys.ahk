@@ -15,9 +15,10 @@
 
 XButton1::Shift
 XButton2::Ctrl
-
+#IfWinNotActive, ahk_exe audacity.exe
 ^WheelDown::Volume_Down
 ^WheelUp::Volume_Up
+#IfWinNotActive
 
 ^+WheelUp:: Send {PgUp}
 ^+WheelDown:: Send {PgDn}

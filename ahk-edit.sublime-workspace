@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"IfWin",
+				"IfWinNotActive\t#IfWinNotActive"
+			],
+			[
+				"Sing",
+				"SingleInstance\t#SingleInstance"
+			],
+			[
 				"whe",
 				"WheelDown"
 			],
@@ -419,14 +427,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "boil.ahk",
-			"settings":
-			{
-				"buffer_size": 458,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -574,27 +574,35 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/andrew/Desktop/Ahk original scripts"
 	],
 	"file_history":
 	[
-		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotstrings.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotkeys.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/wrapquotes.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/temphotstrings.ahk",
-		"/C/Users/andrew/Desktop/Ahk original scripts/boil.ahk",
+		"/C/Users/andrew/Desktop/craigslist/.gitignore",
+		"/C/Users/andrew/Desktop/craigslist/README.md",
+		"/C/Users/andrew/Desktop/craigslist/renewer.py",
+		"/C/Users/andrew/Desktop/renew_clist_ads.py",
 		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/UserCommands.ahk",
+		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts/Miscellaneous/miscellaneous.ahk",
+		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts/Host.ahk",
+		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts/GUI/GUI.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotkeys.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/COMMIT_EDITMSG.COMMIT_EDITMSG",
+		"/C/Users/andrew/Desktop/tmp.py",
+		"/C/Users/andrew/Desktop/ad45831a2fb73f537a79-fdf35c63ea8484f82031bcbd23809628fe8e7203/lxml_examples.py",
+		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/GUI/GUI.ahk",
+		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Miscellaneous/miscellaneous.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/boil.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/temphotstrings.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/globalhotstrings.ahk",
+		"/C/Users/andrew/Desktop/Ahk original scripts/wrapquotes.ahk",
 		"/C/Users/andrew/Desktop/Ahk original scripts/localhotkeys.ahk",
 		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/README.md",
 		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/.git/COMMIT_EDITMSG",
 		"/C/Users/andrew/Desktop/Public-AutoHotKey-Scripts-master/Public-AutoHotKey-Scripts-master/GUI/readme.md",
-		"/C/Users/andrew/Desktop/renew_clist_ads.py",
-		"/C/Users/andrew/Desktop/craigslist/renewer.py",
 		"/C/Users/andrew/Desktop/mosconi/README.md",
 		"/C/Users/andrew/.bashrc",
 		"/C/Users/andrew/.gitconfig",
 		"/C/Users/andrew/Desktop/mosconi/split_players.py",
-		"/C/Users/andrew/Desktop/craigslist/.gitignore",
 		"/C/Users/andrew/Desktop/Ahk original scripts/ahk-edit.sublime-project",
 		"/C/Users/andrew/Desktop/config.txt",
 		"/C/Users/andrew/Desktop/craigslist/poster.py",
@@ -607,7 +615,6 @@
 		"/C/Users/andrew/Desktop/app3-website-blocker.py",
 		"/C/Windows/System32/drivers/etc/hosts",
 		"/C/Users/andrew/AppData/Local/Programs/Python/Python35/2to3_nb.py",
-		"/C/Users/andrew/Desktop/Ahk original scripts/COMMIT_EDITMSG.COMMIT_EDITMSG",
 		"/C/Users/andrew/Desktop/Ahk original scripts/pga.ahk",
 		"/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/peds.sublime-snippet",
 		"/C/Users/andrew/AppData/Roaming/Sublime Text 3/Packages/User/hotspot.sublime-snippet",
@@ -697,15 +704,7 @@
 		"/C/Program Files/Sublime Text 3/starcars.py",
 		"/C/Users/andrew/Desktop/googlefoo/Demographic_Statistics_By_Zip_Code.py",
 		"/C/Users/andrew/Desktop/MNIST data/playg.py",
-		"/C/Users/andrew/Desktop/MNIST data/knn_mnist.py",
-		"/C/Users/andrew/Desktop/table1.xls",
-		"/C/Users/andrew/Desktop/Myers-briggs project/chasefiles.py",
-		"/C/Users/andrew/Desktop/chase/chase3.txt",
-		"/C/Users/andrew/Desktop/chase/c1.txt",
-		"/C/Users/andrew/Desktop/Myers-briggs project/Q-e Support Group That Each Myers-Briggs Personality Type Needs.txt",
-		"/C/Users/andrew/Desktop/Myers-briggs project/briggs_formater.py",
-		"/C/Users/andrew/Desktop/Myers-briggs project/play.py",
-		"/C/Users/andrew/Desktop/Myers-briggs project/get_briggs_articles.py"
+		"/C/Users/andrew/Desktop/MNIST data/knn_mnist.py"
 	],
 	"find":
 	{
@@ -724,6 +723,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"include",
 			"boil",
 			"ph",
 			"porn",
@@ -856,112 +856,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "boil.ahk",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 458,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								458,
-								458
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/AutoHotkey/AutoHotkey.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1058,7 +954,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 303.0,
+	"side_bar_width": 415.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
