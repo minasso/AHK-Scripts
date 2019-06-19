@@ -5269,13 +5269,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ;-------------------------------------------------------------------------------
 ;  Capitalise dates
 ;-------------------------------------------------------------------------------
-::monday::Monday
-::tuesday::Tuesday
-::wednesday::Wednesday
-::thursday::Thursday
-::friday::Friday
-::saturday::Saturday
-::sunday::Sunday 
+
 
 ::january::January
 ::february::February

@@ -28,25 +28,15 @@ return
 
 ^Space::
 !Space::
-+MButton::
+;+WheelDown::
+MButton::
 MouseGetPos,,,win
 WinGetClass, class, ahk_id  
+;If class in Progman, WorkerW
+; WinActivate, ahk_class Chrome_WidgetWin_1
+;else
 WinMinimize, A
 Return
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;  kill chrome ;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-^+k::
-    run C:\Users\Andrew\Desktop\killchrome.bat
-    sleep 500
-    run C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-    sleep 1000
-    WinMaximize, A
-    sleep 1000
-    send {Tab}{Esc}
-return
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;  google selection ;;;;;;;;;;;;

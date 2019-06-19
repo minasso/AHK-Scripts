@@ -1,10 +1,9 @@
 #Include boil.ahk
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; VLC ;;;;;;;;;;;;;;;;;;
-#IfWinActive, ahk_exe vlc.exe
-
-WheelUp::,
-WheelDown::.
+;#IfWinActive, ahk_exe vlc.exe
+;WheelUp::,
+;WheelDown::.
 
 ; #IfWinActive, ahk_exe sublime_text.exe
 ; ^Enter::
@@ -155,13 +154,8 @@ Return
 
 
 DetectHiddenWindows, On
- 
-^MButton::Volume_Mute
-
-+WheelUp::
+;+WheelUp::
   ControlFocus, ahk_exe MySpeed.exe
-
-
 +Right:: 
 if WinActive("ahk_exe MySpeed.exe")
   {
@@ -189,7 +183,7 @@ return
 		sleep 100
 		send {alt} ;activate menu 
 		sleep 200 ;
-		send 9       ;;;;;;     purple pen .35     ;;;;;;;;;;
+		send 8       ;;;;;;     color wheel     ;;;;;;;;;;
 		return
 
 		
@@ -243,7 +237,8 @@ WinActivate, Untitled page - OneNote ahk_class Framework::CFrame
 Sleep, 33
 ; Send, {LControl Down}{Down}{Down}{Down}{LControl Up}
 Return
-	
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;    rotate right  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
