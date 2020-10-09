@@ -7,15 +7,15 @@
 ^MButton::Volume_Mute
 
 XButton1::Shift
-return
+
 XButton2::Ctrl
-return
+
 
 ^WheelDown::Volume_Down
-return
+
 
 ^WheelUp::Volume_Up
-return
+
 
 
 +WheelUp::Send ^!f
@@ -64,23 +64,14 @@ return
 
 ^+a::  Winset, Alwaysontop, , A
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;   spotify  ;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-^!#+s:: Run C:\Users\andrew\AppData\Roaming\Spotify\Spotify.exe
-;;      works together with pederson spot 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;; global pen usage ;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#F20::
-        run onenote.exe
-        return
-#F19::
-        run onenote.exe
-        return
-;#F18::
-        run onenote.exe
-        return
+#F20::run onenote.exe
+        
+#F19::run onenote.exe
+        
+;#F18:: run onenote.exe
+        
