@@ -3,31 +3,30 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;  mouse keys ;;;;;;;;;;;;;;;;;;  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-^MButton::Volume_Mute
-
+#InstallKeybdHook
 XButton1::Shift
-
 XButton2::Ctrl
 
-
+^MButton::Volume_Mute
 ^WheelDown::Volume_Down
-
-
 ^WheelUp::Volume_Up
 
+;+WheelUp::Send ^!f  ;(myspeed=faster)
+;+WheelDown::Send ^!s   ;(myspeed=slower)
+;+WheelUp::a  ;(myspeed=faster)
+;+WheelDown::Send +<   ;(myspeed=slower)
 
++WheelUp::d  ;(faster)
++WheelDown::Send s   ;(slower)
 
-+WheelUp::Send ^!f
-+WheelDown::Send ^!s
-
-
+;^+WheelUp::
+;^+WheelDown::
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;  minimize window  ;;;;;;;;;;;;;;
+;;;;;;;;;;;;  minimize/close window  ;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;minimize;;;;;;;;;;;;;;;
 ^Space::
-!Space::
 +MButton::
 MouseGetPos,,,win
 WinGetClass, class, ahk_id  
