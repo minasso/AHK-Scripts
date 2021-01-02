@@ -1,16 +1,25 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#SingleInstance
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-!WheelDown::
-  AdjustScreenBrightness(-3)
-  Return
+;lightbulb change brightness and screen color
+!+WheelUp::!+j
+!+WheelDown::!+k
+
+!WheelUp:: !+n
+!WheelDown:: !+m
   
+
+/*
 !WheelUp::
   AdjustScreenBrightness(3)
   Return
-  
+!WheelDown::
+  AdjustScreenBrightness(-3)
+  Return
+
 AdjustScreenBrightness(step) {
     service := "winmgmts:{impersonationLevel=impersonate}!\\.\root\WMI"
     monitors := ComObjGet(service).ExecQuery("SELECT * FROM WmiMonitorBrightness WHERE Active=TRUE")
@@ -36,3 +45,4 @@ AdjustScreenBrightness(step) {
         break
     }
 }
+*/
