@@ -10,12 +10,7 @@ XButton2::Ctrl
 ^WheelDown::Volume_Down
 ^WheelUp::Volume_Up
 
-;+WheelUp::Send ^!f  ;(myspeed=faster)
-;+WheelDown::Send ^!s   ;(myspeed=slower)
-;+WheelUp::a  ;(myspeed=faster)
-;+WheelDown::Send +<   ;(myspeed=slower)
-
-+WheelUp::d  ;(faster)
++WheelUp::Send d  ;(faster)
 +WheelDown::Send s   ;(slower)
 
 ;^+WheelUp::
